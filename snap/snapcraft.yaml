@@ -1,4 +1,4 @@
-name: discord
+name: discord-bartixxx
 version: latest
 version-script: cat $SNAPCRAFT_STAGE/version
 summary: Free voice and text chat
