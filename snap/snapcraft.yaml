@@ -65,7 +65,7 @@ parts:
       VERSION=$(echo "${DEB_URL}" | cut -d'/' -f6)
       echo $VERSION > $SNAPCRAFT_STAGE/version
       # Correct path to icon.
-      sed -i 's|Icon=discord|Icon=/usr/share/discord-bartixxx/discord\.png|' ${SNAPCRAFT_PART_INSTALL}/usr/share/discord-bartixxx/discord-bartixxx.desktop
+      sed -i 's|Icon=discord|Icon=/usr/share/discord/discord\.png|' ${SNAPCRAFT_PART_INSTALL}/usr/share/discord/discord.desktop
     after:
       - gnome
       - desktop-gnome-platform
