@@ -1,6 +1,6 @@
 name: discord-bartixxx
-version: 1.0
-version-script: cat $SNAPCRAFT_STAGE/version
+version: 1.1.0
+version-script: 1.1.0
 summary: Free voice and text chat
 description: |
  All-in-one voice and text chat for gamers that's free, secure, and
