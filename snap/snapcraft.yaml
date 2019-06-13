@@ -65,10 +65,15 @@ parts:
       VERSION=$(echo "${DEB_URL}" | cut -d'/' -f6)
       echo $VERSION > $SNAPCRAFT_STAGE/version
       # Correct path to icon.
+      echo ---ls---
       ls
+      echo ---ls usr/share--
       ls /usr/share/
+      echo ---ls usr/share/discord-bartixxx/---
       ls /usr/share/discord-bartixxx/
+      echo ---ls ${SNAPCRAFT_PART_INSTALL}/usr/share/---
       ls ${SNAPCRAFT_PART_INSTALL}/usr/share/
+      echo ---ls ${SNAPCRAFT_PART_INSTALL}/usr/share/discord-bartixxx/---
       ls ${SNAPCRAFT_PART_INSTALL}/usr/share/discord-bartixxx/
       sed -i 's|Icon=discord-bartixxx|Icon=/usr/share/discord-bartixxx/discord\.png|' ${SNAPCRAFT_PART_INSTALL}/usr/share/discord-bartixxx/discord-bartixxx.desktop
     after:
