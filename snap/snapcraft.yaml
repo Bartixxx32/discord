@@ -65,7 +65,7 @@ parts:
       VERSION=$(echo "${DEB_URL}" | cut -d'/' -f6)
       echo $VERSION > $SNAPCRAFT_STAGE/version
       # Correct path to icon.
-      sed -i 's|Icon=discord|Icon=/usr/share/discord/discord\.png|' ${SNAPCRAFT_PART_INSTALL}/usr/share/discord/discord.desktop
+      sed -i 's|Icon=discord|Icon=/usr/share/discord-bartixxx/Discord\.png|' ${SNAPCRAFT_PART_INSTALL}/usr/share/discord-bartixxx/Discord.desktop
     after:
       - gnome
       - desktop-gnome-platform
@@ -89,7 +89,7 @@ parts:
 
 apps:
   discord:
-    command: bin/desktop-launch $SNAP/usr/share/discord/Discord
+    command: bin/desktop-launch $SNAP/usr/share/discord-bartixxx/Discord
     desktop: usr/share/applications/discord.desktop
     environment:
       # Correct the TMPDIR path for Chromium Framework/Electron to
