@@ -54,7 +54,7 @@ parts:
       - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libappindicator*.so*
       - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libindicator*.so*
 
-  discord-bartixxx:
+  discord:
     plugin: dump
     source: "https://discordapp.com/api/download?platform=linux&format=deb"
     source-type: deb
@@ -67,15 +67,15 @@ parts:
       # Correct path to icon.
       echo ---ls---
       ls
-      echo ---ls usr/share--
+      echo ---ls usr/share---
       ls /usr/share/
-      echo ---ls usr/share/discord-bartixxx/---
-      ls /usr/share/discord-bartixxx/
+      echo ---ls usr/share/discord/---
+      ls /usr/share/discord/
       echo ---ls ${SNAPCRAFT_PART_INSTALL}/usr/share/---
       ls ${SNAPCRAFT_PART_INSTALL}/usr/share/
-      echo ---ls ${SNAPCRAFT_PART_INSTALL}/usr/share/discord-bartixxx/---
-      ls ${SNAPCRAFT_PART_INSTALL}/usr/share/discord-bartixxx/
-      sed -i 's|Icon=discord-bartixxx|Icon=/usr/share/discord-bartixxx/discord\.png|' ${SNAPCRAFT_PART_INSTALL}/usr/share/discord-bartixxx/discord-bartixxx.desktop
+      echo ---ls ${SNAPCRAFT_PART_INSTALL}/usr/share/discord/---
+      ls ${SNAPCRAFT_PART_INSTALL}/usr/share/discord/
+      sed -i 's|Icon=discord|Icon=/usr/share/discord/discord\.png|' ${SNAPCRAFT_PART_INSTALL}/usr/share/discord/discord.desktop
     after:
       - gnome
       - desktop-gnome-platform
@@ -98,9 +98,9 @@ parts:
       - -usr/bin/xdg-open
 
 apps:
-  discord-bartixxx:
-    command: bin/desktop-launch $SNAP/usr/share/discord-bartixxx/Discord
-    desktop: usr/share/applications/discord-bartixxx.desktop
+  discord:
+    command: bin/desktop-launch $SNAP/usr/share/discord/Discord
+    desktop: usr/share/applications/discord.desktop
     environment:
       # Correct the TMPDIR path for Chromium Framework/Electron to
       # ensure libappindicator has readable resources
