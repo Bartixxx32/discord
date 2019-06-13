@@ -65,16 +65,6 @@ parts:
       VERSION=$(echo "${DEB_URL}" | cut -d'/' -f6)
       echo $VERSION > $SNAPCRAFT_STAGE/version
       # Correct path to icon.
-      echo ---ls---
-      ls
-      echo ---ls usr/share---
-      ls /usr/share/
-      echo ---ls usr/share/discord/---
-      ls /usr/share/discord/
-      echo ---ls ${SNAPCRAFT_PART_INSTALL}/usr/share/---
-      ls ${SNAPCRAFT_PART_INSTALL}/usr/share/
-      echo ---ls ${SNAPCRAFT_PART_INSTALL}/usr/share/discord/---
-      ls ${SNAPCRAFT_PART_INSTALL}/usr/share/discord/
       sed -i 's|Icon=discord|Icon=/usr/share/discord/discord\.png|' ${SNAPCRAFT_PART_INSTALL}/usr/share/discord/discord.desktop
     after:
       - gnome
